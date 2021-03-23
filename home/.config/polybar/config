@@ -18,14 +18,14 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #181a20
+background-alt = #3f3f3f
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = #eeffff
 foreground-alt = #555
 primary = #89ddff
 secondary = #e60053
-alert = #bd2c40
+alert = #f07178
 
 [bar/primary]
 monitor = ${env:MONITOR:HDMI-1}
@@ -61,7 +61,7 @@ modules-right = xbacklight pulseaudio memory cpu wlan battery temperature date p
 
 ;tray-position = center
 tray-padding = 2
-;tray-background = #ffffff
+tray-background = ${colors.background}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -90,7 +90,7 @@ pin-workspaces = false
 
 ; Create click handler used to focus desktop
 ; Default: true
-enable-click = false
+enable-click = true
 
 ; Create scroll handlers used to cycle desktops
 ; Default: true
@@ -101,11 +101,12 @@ enable-scroll = false
 ; You can get a list of the defined desktops using:
 ; $ xprop -root _NET_DESKTOP_NAMES
 ; Note: Neither <desktop-name> nor <icon> can contain a semicolon (;)
-icon-0 = we;♚
-icon-1 = office;♛
-icon-2 = graphics;♜
-icon-3 = mail;♝
-icon-4 = web;♞
+icon-0 = 1;web
+icon-1 = 2;code
+icon-2 = 3;term
+icon-3 = 4;flex
+icon-4 = 5;music
+icon-5 = 6;chat
 ;icon-default = ♟
 
 ; Available tags:
@@ -124,9 +125,9 @@ label-monitor = %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon% %name%
-label-active = %icon% %name%
-label-active-foreground = #ffffff
-label-active-background = #3f3f3f
+label-active = %name% %icon%
+label-active-foreground = ${colors.foreground}
+label-active-background = ${colors.background-alt}
 label-active-underline = ${colors.primary}
 label-active-padding = 4
 
@@ -146,7 +147,7 @@ label-occupied-underline = #555555
 label-urgent = %icon% %name%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
+label-urgent-underline = ${colors.alert}
 label-urgent-padding = 4
 
 ; Available tokens:
@@ -154,9 +155,9 @@ label-urgent-padding = 4
 ;   %icon%
 ;   %index%
 ; Default: %icon% %name%
-label-empty = %icon% %name%
-label-empty-foreground = #55
-label-empty-padding = 2
+label-empty = %name% %icon%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
 
 [module/xwindow]
 type = internal/xwindow
