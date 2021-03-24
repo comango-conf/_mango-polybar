@@ -363,7 +363,7 @@ label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 ;format-muted = <ramp-volume> <label-muted>
-label-muted = " %percentage%%    muted      "
+label-muted = " %percentage%%       muted      "
 label-muted-foreground = ${colors.foreground}
 
 ramp-volume-0 = 
