@@ -52,8 +52,9 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-1 = Font Awesome 5 Free Solid:size=8;0
+font-2 = Font Awesome 5 Free Regular:size=8;0
+font-3 = Font Awesome 5 Brands:size=8;0
 
 modules-left = ewmh
 modules-center = xwindow
@@ -101,13 +102,13 @@ enable-scroll = false
 ; You can get a list of the defined desktops using:
 ; $ xprop -root _NET_DESKTOP_NAMES
 ; Note: Neither <desktop-name> nor <icon> can contain a semicolon (;)
-icon-0 = 1;web
-icon-1 = 2;code
-icon-2 = 3;term
-icon-3 = 4;flex
-icon-4 = 5;music
-icon-5 = 6;chat
-;icon-default = ♟
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-default = 
 
 ; Available tags:
 ;   <label-monitor>
@@ -287,7 +288,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "CPU "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
 label = %percentage:2%%
@@ -295,7 +296,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "MEM "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 label = %percentage_used%%
@@ -348,7 +349,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
@@ -357,12 +358,17 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+format-volume = <ramp-volume> <label-volume> <bar-volume>
+label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+;format-muted = <ramp-volume> <label-muted>
+label-muted = " %percentage%%    muted      "
+label-muted-foreground = ${colors.foreground}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.primary}
@@ -415,30 +421,30 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <ramp-capacity> <label-charging>
 format-charging-underline = ${colors.primary}
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 ;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -454,11 +460,11 @@ format-warn = <ramp> <label-warn>
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.alert}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
@@ -468,10 +474,10 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-open = 
+label-open-foreground = ${colors.alert}
+label-close = 
+label-close-foreground = ${colors.alert}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
@@ -496,7 +502,7 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+pseudo-transparency = true
 
 [global/wm]
 margin-top = 5
