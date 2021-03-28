@@ -18,10 +18,9 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #<#{BLACK}#>
+background = #<#{BACKGROUND}#>
 background-alt = #3f3f3f
-;foreground = ${xrdb:color7:#222}
-foreground = #eeffff
+foreground = #<#{FOREGROUND}#>
 foreground-alt = #555
 primary = #<#{PRIMARY}#>
 secondary = #<#{SECONDARY}#>
