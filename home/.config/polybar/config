@@ -57,7 +57,7 @@ font-4 = Font Awesome 5 Brands:size=10;0
 
 modules-left = ewmh
 modules-center = xwindow
-modules-right = xbacklight pulseaudio memory cpu wlan battery temperature date powermenu
+modules-right = xbacklight pulseaudio memory cpu wlan battery temperature date
 
 ;tray-position = center
 tray-padding = 2
