@@ -137,7 +137,8 @@ label-active-padding = 4
 ;   %index%
 ; Default: %icon% %name%
 label-occupied = %icon% %name%
-label-occupied-underline = #555555
+;label-occupied-underline = #555555
+label-occupied-padding = 1
 
 ; Available tokens:
 ;   %name%
