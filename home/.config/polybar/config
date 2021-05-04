@@ -307,7 +307,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = <#{WLAN_INTERFACE}#>
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
