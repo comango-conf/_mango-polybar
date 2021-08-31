@@ -59,7 +59,7 @@ modules-left = ewmh
 modules-center = xwindow
 modules-right = xbacklight pulseaudio memory cpu wlan battery temperature date
 
-;tray-position = center
+tray-position = right
 tray-padding = 2
 tray-background = ${colors.background}
 
