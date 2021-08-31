@@ -1,5 +1,5 @@
 #!/bin/bash
 
-#HOOKS INTO wminit
+#HOOKS INTO
 
 ~/.config/polybar/launch.sh &
